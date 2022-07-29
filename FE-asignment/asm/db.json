@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "ahieu1",
+      "originalPrice": "giá gốc",
+      "saleOffPrice": "gia khuyến mãi",
+      "feature": "dsadadsa",
+      "description": "adsdadass",
+      "shortDescription": "sdadsadsa",
+      "categoryProductId": "2"
+    },
+    {
+      "id": 2,
+      "name": "123",
+      "originalPrice": "50000001",
+      "saleOffPrice": "2",
+      "feature": "dsadadsa",
+      "description": "adsdadass",
+      "categoryProductId": "2",
+      "shortDescription": "sdadsadsa"
+    },
+    {
+      "id": 3,
+      "name": "hieu",
+      "originalPrice": "50000001",
+      "saleOffPrice": "12",
+      "feature": "1",
+      "description": "1",
+      "categoryProductId": "212",
+      "shortDescription": "21121"
+    }
+  ]
+}
