@@ -1,6 +1,6 @@
 import Product from "../models/product";
 
-export const list = async (req, res) => {
+export const list = async(req, res) => {
     try {
         const data = await Product.find();
         res.json(data);
@@ -10,7 +10,7 @@ export const list = async (req, res) => {
         });
     }
 };
-export const read = async (req, res) => {
+export const read = async(req, res) => {
     const filter = { _id: req.params.id };
     const populate = req.query["_expand"];
     try {
@@ -24,8 +24,8 @@ export const read = async (req, res) => {
         });
     }
 };
-export const add = async (req, res) => {
-    console.log("ahihi");
+export const add = async(req, res) => {
+
     try {
         const product = await new Product(req.body).save();
         res.json(product);
@@ -35,7 +35,7 @@ export const add = async (req, res) => {
         });
     }
 };
-export const remove = async (req, res) => {
+export const remove = async(req, res) => {
     try {
         const id = req.params.id;
         const product = await Product.findOneAndDelete({ _id: id }).exec();
@@ -47,7 +47,7 @@ export const remove = async (req, res) => {
     }
 };
 
-export const update = async (req, res) => {
+export const update = async(req, res) => {
     try {
         const product = await Product.findOneAndUpdate({ _id: req.params.id }, req.body, {
             new: true,
