@@ -105,7 +105,6 @@ const AddProductPage = {
         })
 
         inputFile?.addEventListener('change', async (e) => {
-            console.log(e.target.files)
             const file = e.target.files[0]
             const reader = new FileReader()
             reader.readAsDataURL(file)

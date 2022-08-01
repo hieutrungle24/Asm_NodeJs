@@ -2,14 +2,13 @@
   "products": [
     {
       "id": 1,
-      "name": "ahieu1",
-      "img": "anh",
+      "name": "test6",
       "originalPrice": "giá gốc",
       "saleOffPrice": "gia khuyến mãi",
       "feature": "dsadadsa",
       "description": "adsdadass",
-      "shortDescription": "sdadsadsa",
-      "categoryProductId": "2"
+      "categoryProductId": "2",
+      "shortDescription": "sdadsadsa"
     },
     {
       "name": "test3",
