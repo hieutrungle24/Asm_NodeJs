@@ -3,6 +3,7 @@
     {
       "id": 1,
       "name": "ahieu1",
+      "img": "anh",
       "originalPrice": "giá gốc",
       "saleOffPrice": "gia khuyến mãi",
       "feature": "dsadadsa",
@@ -11,24 +12,15 @@
       "categoryProductId": "2"
     },
     {
-      "id": 2,
-      "name": "123",
-      "originalPrice": "50000001",
-      "saleOffPrice": "2",
-      "feature": "dsadadsa",
-      "description": "adsdadass",
-      "categoryProductId": "2",
-      "shortDescription": "sdadsadsa"
-    },
-    {
-      "id": 3,
-      "name": "hieu",
-      "originalPrice": "50000001",
-      "saleOffPrice": "12",
-      "feature": "1",
-      "description": "1",
-      "categoryProductId": "212",
-      "shortDescription": "21121"
+      "name": "test3",
+      "originalPrice": "2",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659326952/anhhtus/m2ut2k64nz49xkywmsab.png",
+      "saleOffPrice": "dsaddsa",
+      "categoryProductId": "1",
+      "feature": "wq",
+      "description": "sadádsa",
+      "shortDescription": "dsadsad",
+      "id": 10
     }
   ]
 }
