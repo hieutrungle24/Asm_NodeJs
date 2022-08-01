@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "test6",
+      "originalPrice": "giá gốc",
+      "saleOffPrice": "gia khuyến mãi",
+      "feature": "dsadadsa",
+      "description": "adsdadass",
+      "categoryProductId": "2",
+      "shortDescription": "sdadsadsa"
+    },
+    {
+      "name": "test3",
+      "originalPrice": "2",
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659326952/anhhtus/m2ut2k64nz49xkywmsab.png",
+      "saleOffPrice": "dsaddsa",
+      "categoryProductId": "1",
+      "feature": "wq",
+      "description": "sadádsa",
+      "shortDescription": "dsadsad",
+      "id": 10
+    }
+  ]
+}
