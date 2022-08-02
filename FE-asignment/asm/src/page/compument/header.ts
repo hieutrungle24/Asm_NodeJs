@@ -1,4 +1,4 @@
-const headerPage = {
+const header = {
 	render: () => {
 		return (
             /*html*/`
@@ -40,4 +40,4 @@ const headerPage = {
 	}
 }
 
-export default headerPage
+export default header
