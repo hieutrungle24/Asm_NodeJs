@@ -1,10 +1,9 @@
-const headerPage = {
+const header = {
 	render: () => {
 		return (
             /*html*/`
             <div class="flex bg-blue-300 justify-between">
-                <img class="w-[64px] p-2" src="./public/image/logo.png"/>
-
+                <a href="/"><img class="w-[64px] p-2" src="./public/images/logo.png"/></a>
                 <div class="ml-auto flex items-center">
 
                 <div class="flex items-center justify-center">
@@ -40,4 +39,4 @@ const headerPage = {
 	}
 }
 
-export default headerPage
+export default header
