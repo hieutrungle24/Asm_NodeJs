@@ -1,4 +1,12 @@
 {
+  "users": [
+    {
+      "email": "hieutdph13190@gmail.com",
+      "password": "$2a$10$Q3QnNYWmMsJj7BgY5ps5oe/WxuKXARueCBDsclQOpsaxatVUsxtF.",
+      "phone": "0987654321",
+      "id": 1
+    }
+  ],
   "products": [
     {
       "id": 1,

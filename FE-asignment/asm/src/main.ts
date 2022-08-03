@@ -4,6 +4,7 @@ import Navigo from "navigo";
 import AdminPage from './pages/Admin/index';
 import AddProductPage from './pages/Admin/product/add';
 import EditProductPage from "./pages/Admin/product/edit";
+import Signup from './pages/auth/signup';
 const router = new Navigo('/', { linksSelector: "a" });
 export type ComponentBase = {
   render: () => Promise<string>;
@@ -27,6 +28,9 @@ router.on({
     const id = ahi.data.id
     console.log(id)
     print(EditProductPage, id)
+  },
+  "/singup": () => {
+    print(Signup)
   }
 })
 router.resolve()
