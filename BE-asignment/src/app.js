@@ -1,9 +1,10 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
-import routerProduct from './router/product'
+
 import routerCategory from './router/categories'
 import routerAuth from './router/auth'
+import routerProduct from './router/product'
 
 const app = express()
 
