@@ -5,6 +5,7 @@ import AdminPage from './pages/Admin/index';
 import AddProductPage from './pages/Admin/product/add';
 import EditProductPage from "./pages/Admin/product/edit";
 import Signup from './pages/auth/signup';
+import Signin from './pages/auth/singin';
 const router = new Navigo('/', { linksSelector: "a" });
 export type ComponentBase = {
   render: () => Promise<string>;
@@ -31,6 +32,9 @@ router.on({
   },
   "/singup": () => {
     print(Signup)
+  },
+  "/singin": () => {
+    print(Signin)
   }
 })
 router.resolve()
