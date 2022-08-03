@@ -5,6 +5,7 @@ import Navigo from "navigo";
 import AdminPage from './pages/Admin/index';
 import AddProductPage from './pages/Admin/product/add';
 import EditProductPage from "./pages/Admin/product/edit";
+import homePage from './page/homePage/home';
 const router = new Navigo('/', { linksSelector: "a" });
 
 export type ComponentBase = {
@@ -20,6 +21,9 @@ const print = async (component: ComponentBase, id: any) => {
 }
 
 router.on({
+  "/": () => {
+    print(homePage)
+  },
   "/admin": () => {
     print(AdminPage)
   },
