@@ -34,6 +34,9 @@ router.on({
     const id = ahi.data.id
     console.log(id)
     print(EditProductPage, id)
+  },
+  "/singup": () => {
+    print(Signup)
   }
 })
 router.resolve()
