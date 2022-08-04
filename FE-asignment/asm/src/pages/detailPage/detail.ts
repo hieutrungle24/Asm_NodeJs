@@ -1,13 +1,13 @@
 import { getProductsid } from "../../api/product"
-import footer from "../../compument/footer"
-import header from "../../compument/header"
+import footer from "../../compoment/footer"
+import header from "../../compoment/header"
 
 const detailPage = {
-	render: async (id) => {
+    render: async (id) => {
         const res = await getProductsid(id)
         const data: Products[] = res.data
         console.log(res);
-		return /*html*/`
+        return /*html*/`
         ${header.render()}
         <div class="bg-white">
                 <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">

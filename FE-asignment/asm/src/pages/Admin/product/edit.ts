@@ -1,6 +1,6 @@
 import { update } from '../../../api/product'
-import header from '../../../compument/header'
-import menu from '../../../compument/menu'
+import header from '../../../compoment/header'
+import menu from '../../../compoment/menu'
 import { getProductsid } from '../../../api/product'
 import Product from "../../../model/product"
 

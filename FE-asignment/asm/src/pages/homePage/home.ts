@@ -1,16 +1,16 @@
 import { getProducts } from "../../api/product"
 import Product from "../../model/product"
-import footer from "../../compument/footer"
-import header from "../../compument/header"
-import menu from "../../compument/menu"
-import banner from "../../compument/banner"
+import footer from "../../compoment/footer"
+import header from "../../compoment/header"
+import menu from "../../compoment/menu"
+import banner from "../../compoment/banner"
 
 const homePage = {
-	render: async () => {
+    render: async () => {
         const res = await getProducts()
         const data: Product[] = res.data
         console.log(data.map((p) => (p.id)));
-		return /*html*/`
+        return /*html*/`
             ${header.render()}
         <div class="flex mt-4 divide-x">
             ${menu.render()}
