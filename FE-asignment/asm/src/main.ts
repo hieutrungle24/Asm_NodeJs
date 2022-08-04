@@ -1,12 +1,12 @@
 import './style.css'
-
+import axios from 'axios';
 import typescriptLogo from './typescript.svg';
 import Navigo from "navigo";
 import AdminPage from './pages/Admin/index';
 import AddProductPage from './pages/Admin/product/add';
 import EditProductPage from "./pages/Admin/product/edit";
-import homePage from './page/homePage/home';
-import detailPage from './page/detailPage/detail';
+import homePage from './pages/homePage/home';
+import detailPage from './pages/detailPage/detail';
 
 
 const router = new Navigo('/', { linksSelector: "a" });

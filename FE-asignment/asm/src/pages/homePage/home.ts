@@ -1,8 +1,9 @@
 import { getProducts } from "../../api/product"
 import Product from "../../model/product"
-import footer from "../compument/footer"
-import header from "../compument/header"
-import menu from "../compument/menu"
+import footer from "../../compument/footer"
+import header from "../../compument/header"
+import menu from "../../compument/menu"
+import banner from "../../compument/banner"
 
 const homePage = {
 	render: async () => {
@@ -11,7 +12,10 @@ const homePage = {
         console.log(data.map((p) => (p.id)));
 		return /*html*/`
             ${header.render()}
+        <div class="flex mt-4 divide-x">
             ${menu.render()}
+            ${banner.render()}
+        </div>    
             <h1 class="ml-20 mt-10 text-lg ">ĐIỆN THOẠI HOT NHẤT</h1> 
         <div class="product ">
             

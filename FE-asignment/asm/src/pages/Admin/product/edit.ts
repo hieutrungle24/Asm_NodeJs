@@ -1,8 +1,9 @@
 import { update } from '../../../api/product'
-import AdminHeader from '../../../components/Header/Admin'
-import Sidebar from '../../../components/Sidebar'
+import header from '../../../compument/header'
+import menu from '../../../compument/menu'
 import { getProductsid } from '../../../api/product'
 import Product from "../../../model/product"
+
 const EditProductPage = {
     render: async (id) => {
         console.log(id)
@@ -12,11 +13,11 @@ const EditProductPage = {
         return /*html*/`
         
             
-            ${AdminHeader.render()}
+            ${header.render()}
         <form id="formEdit">
            <div class="flex mt-4 divide-x">
             <div class="w-[250px] flex-none">
-                ${Sidebar.render()}
+                ${menu.render()}
             </div>
             
             
@@ -65,11 +66,7 @@ const EditProductPage = {
                     
                     
                     </div>
-                    <div>
-                    <label for="">đặt  điểm nổi bật</label>
-                    <textarea id="feature" class="w-full border" style="
-                     height: 100px;">${data.feature}</textarea>
-                    </div>
+                    
                     <div>
                     <label for="">Mô tả dài</label>
                     <textarea id="description" class="w-full border" style="
@@ -100,7 +97,6 @@ const EditProductPage = {
                 name: document.querySelector('#name').value,
                 originalPrice: document.querySelector("#originalPrice").value,
                 saleOffPrice: document.querySelector("#saleOffPrice").value,
-                feature: document.querySelector("#feature").value,
                 description: document.querySelector("#description").value,
                 categoryProductId: document.querySelector("#categoryProductId").value,
                 shortDescription: document.querySelector("#shortDescription").value,
