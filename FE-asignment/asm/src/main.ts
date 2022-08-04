@@ -1,5 +1,4 @@
 import './style.css'
-import axios from 'axios';
 import typescriptLogo from './typescript.svg';
 import Navigo from "navigo";
 import AdminPage from './pages/Admin/index';
@@ -7,8 +6,8 @@ import AddProductPage from './pages/Admin/product/add';
 import EditProductPage from "./pages/Admin/product/edit";
 import homePage from './pages/homePage/home';
 import detailPage from './pages/detailPage/detail';
-
-
+import Signup from './pages/auth/signup';
+import Signin from './pages/auth/singin';
 const router = new Navigo('/', { linksSelector: "a" });
 
 export type ComponentBase = {
@@ -29,7 +28,7 @@ router.on({
   },
   "/products/:id": (value) => {
     console.log(value.data.id);
-    print(detailPage,value.data.id);
+    print(detailPage, value.data.id);
   },
   "/admin": () => {
     print(AdminPage)
@@ -37,8 +36,8 @@ router.on({
   "/admin/products/add": () => {
     print(AddProductPage)
   },
-  "/admin/products/edit/:id": (ahi) => {
-    const id = ahi.data.id
+  "/admin/products/edit/:id": (a) => {
+    const id = a.data.id
     console.log(id)
     print(EditProductPage, id)
   },

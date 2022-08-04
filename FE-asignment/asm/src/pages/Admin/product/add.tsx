@@ -1,7 +1,7 @@
 
 import { createProduct } from "../../../api/product"
-import header from "../../../compument/header"
-import menu from "../../../compument/menu"
+import header from "../../../compoment/header"
+import menu from "../../../compoment/menu"
 import Product from "../../../model/product"
 import { upload } from "../../../api/image"
 const AddProductPage = {
