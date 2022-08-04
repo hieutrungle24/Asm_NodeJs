@@ -1,16 +1,16 @@
 
 import { createProduct } from "../../../api/product"
-import AdminHeader from "../../../components/Header/Admin"
-import Sidebar from "../../../components/Sidebar"
+import header from "../../../compument/header"
+import menu from "../../../compument/menu"
 import Product from "../../../model/product"
 import { upload } from "../../../api/image"
 const AddProductPage = {
     render: async () => {
         return /*html*/`
-        ${AdminHeader.render()}
+        ${header.render()}
         <div class="flex mt-4 divide-x">
             <div class="w-[250px] flex-none">
-                ${Sidebar.render()}
+                ${menu.render()}
             </div>
             <div class="grow">
                 <h3>Thêm mới sản phẩm</h3>
@@ -53,13 +53,7 @@ const AddProductPage = {
                         <input id="categoryProductId"  type="text" placeholder="danh mục" value="" class="w-full border rounded-sm h-10">
                     </div>
                     </div>
-                    <div> 
                     
-                    
-                    <label for="">đặt  điểm nổi bật</label>
-                    <textarea id="feature" class="w-full border" style="
-                     height: 100px;"></textarea>
-                    </div>
                     <div>
                     <label for="">Mô tả dài</label>
                     <textarea id="description" class="w-full border" style="
@@ -84,11 +78,10 @@ const AddProductPage = {
             const saleOffPrice = document.querySelector("#saleOffPrice")?.value
             const description = document.querySelector("#description")?.value
             const categoryProductId = document.querySelector("#categoryProductId")?.value
-            const feature = document.querySelector("#feature")?.value
             const shortDescription = document.querySelector("#shortDescription")?.value
 
             const imageUrl = previewImage?.src
-            const product = new Product(name, originalPrice, imageUrl, saleOffPrice, categoryProductId, feature, description, shortDescription)
+            const product = new Product(name, originalPrice, imageUrl, saleOffPrice, categoryProductId, description, shortDescription)
 
             if (name !== "" && originalPrice !== "" && description !== "" && categoryProductId !== "" && saleOffPrice !== "") {
                 try {

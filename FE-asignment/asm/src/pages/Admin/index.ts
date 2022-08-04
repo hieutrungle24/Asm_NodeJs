@@ -1,6 +1,6 @@
 import { getProducts, remove } from "../../api/product"
-import AdminHeader from "../../components/Header/Admin"
-import Sidebar from "../../components/Sidebar"
+import header from "../../compument/header";
+import menu from "../../compument/menu";
 import Product from "../../model/product"
 
 const AdminPage = {
@@ -9,10 +9,10 @@ const AdminPage = {
         const data: Product[] = res.data
         console.log(data.map((p) => (p.description)))
         return /*html*/`
-        ${AdminHeader.render()}
+        ${header.render()}
         <div class="flex mt-4 divide-x">
             <div class="w-[250px] flex-none">
-                ${Sidebar.render()}
+                ${menu.render()}
             </div>
             <div class="grow px-4">
                 <div class="flex justify-between">
@@ -33,7 +33,7 @@ const AdminPage = {
                         <th class="w-[10%] border">Gía</th>
                         <th class="w-[30%] border">Mô tả</th>
                         <th class="w-[10%] border text-center">xóa</th>
-                        <th class="w-[10%] border">Thao tác</th>
+                        <th class="w-[10%] border">Edit</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -1,6 +1,6 @@
 import { getProductsid } from "../../api/product"
-import footer from "../compument/footer"
-import header from "../compument/header"
+import footer from "../../compument/footer"
+import header from "../../compument/header"
 
 const detailPage = {
 	render: async (id) => {

@@ -2,7 +2,7 @@ const menu = {
     render: () => {
         return (
             /*html*/`
-    <div class="flex mt-4 divide-x">
+    
         <div class="max-w-[80%]">
             <ul>
                 <li class="flex items-center hover:bg-blue-300 rounded-md">
@@ -26,10 +26,7 @@ const menu = {
                 </li>
             </ul>
         </div>
-        <div class="grow px-4 ">
-            <img width="1082px" height="382px" src="./public/image/banner.jpg" alt="">
-        </div>
-    </div>
+        
             `
         )
     }
