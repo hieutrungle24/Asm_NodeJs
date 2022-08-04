@@ -5,6 +5,12 @@
       "password": "$2a$10$Q3QnNYWmMsJj7BgY5ps5oe/WxuKXARueCBDsclQOpsaxatVUsxtF.",
       "phone": "0987654321",
       "id": 1
+    },
+    {
+      "email": "hieutdph13191@gmail.com",
+      "password": "$2a$10$n/KSm1DCxejLncD7o/YM/.8WD6aChYLlzhHKArC5O0TOk51m1kKb6",
+      "phone": "0987654321",
+      "id": 2
     }
   ],
   "products": [
