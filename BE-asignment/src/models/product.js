@@ -1,16 +1,25 @@
 import mongoose from "mongoose";
 const ProductSchema = mongoose.Schema ({
-    image_path: {
+    name: {
         type: String,
     },
-    name: {
+    originalPrice: {
+        type:String,
+    },
+    image_path: {
         type: String,
     },
     saleOffPrice: {
         type: Number,
     },
-    originalPrice: {
-        type: Number,
+    categoryProductId: {
+        type: String,
+    },
+    feature: {
+        type: String,
+    },
+    description: {
+        type: String,
     },
     shortDescription: {
         type: String,

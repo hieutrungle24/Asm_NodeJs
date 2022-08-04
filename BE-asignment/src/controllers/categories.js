@@ -1,4 +1,4 @@
-import Categories from "../models/categories";
+import Category from "../models/categories";
 import Product from "../models/product";
 
 export const add = async(req, res) => {
