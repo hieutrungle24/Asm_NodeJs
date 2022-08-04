@@ -12,10 +12,17 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         minlength: 6,
+    },
+    role: {
+        type: Number,
+        default: 0
     }
-})
+}, { timestamps: true })
 
 userSchema.methods = {
+    authenticate(password) {
+        return this.password === this.encryPassword(password)
+    },
     encryPassword: (password) => {
         if (!password) return false;
         return createHmac("sha256", "jqk").update(password).digest("hex")
