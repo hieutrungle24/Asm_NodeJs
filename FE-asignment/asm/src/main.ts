@@ -5,6 +5,9 @@ import Navigo from "navigo";
 import AdminPage from './pages/Admin/index';
 import AddProductPage from './pages/Admin/product/add';
 import EditProductPage from "./pages/Admin/product/edit";
+import homePage from './page/homePage/home';
+import detailPage from './page/detailPage/detail';
+
 
 const router = new Navigo('/', { linksSelector: "a" });
 
@@ -23,6 +26,10 @@ const print = async (component: ComponentBase, id: any) => {
 router.on({
   "/": () => {
     print(homePage)
+  },
+  "/products/:id": (value) => {
+    console.log(value.data.id);
+    print(detailPage,value.data.id);
   },
   "/admin": () => {
     print(AdminPage)

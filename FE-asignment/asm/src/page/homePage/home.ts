@@ -18,8 +18,8 @@ const homePage = {
             <div class=" grid grid-cols-5 gap-6 m-10">
             ${data.map((p, index) => /*html*/`
                 <div>
-                    <a href="/${p.id}"><img src="${p.image}"  class="mb-2" alt=""></a>
-                    <a href="/${p.id}"><p class="mb-2">${p.name}</p></a>
+                    <a href="/products/${p.id}"><img src="${p.image}"  class="mb-2" alt=""></a>
+                    <a href="/products/${p.id}"><p class="mb-2">${p.name}</p></a>
                     <label class="text-red-700 pr-4">${p.saleOffPrice}</label>
                     <label class="text-gray-400">${p.originalPrice}</label>
                     <p class="bg-gray-100 p-3 mt-2">${p.shortDescription}</p>
