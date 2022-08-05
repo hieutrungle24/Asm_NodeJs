@@ -1,6 +1,6 @@
 import instance from "./instance";
 import Category from "../model/category";
-export const getProducts = () => {
+export const getCategory = () => {
     const url = "/category"
     return instance.get(url)
 }

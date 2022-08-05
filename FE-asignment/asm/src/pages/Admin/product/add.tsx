@@ -4,8 +4,14 @@ import header from "../../../compument/header"
 import menu from "../../../compument/menu"
 import Product from "../../../model/product"
 import { upload } from "../../../api/image"
+import { getCategory } from "../../../api/category"
+import Category from "../../../model/category"
 const AddProductPage = {
     render: async () => {
+        const res = await getCategory()
+        const data: Category[] = res.data
+        console.log(data)
+        console.log(data.map((p) => (p._id)).join(""))
         return /*html*/`
         ${header.render()}
         <div class="flex mt-4 divide-x">
@@ -47,13 +53,13 @@ const AddProductPage = {
                     <div class="flex flex-col">
                         <label for="">Giá khuyến mãi:</label>
                         <input id="saleOffPrice" type="text" placeholder="Giá khuyến mãi" class="w-full border rounded-sm h-10">
+                    </div>    
                     </div>
-                    <div class="flex flex-col">
-                        <label for="">danh mục</label>
-                        <input id="categoryProductId"  type="text" placeholder="danh mục" value="" class="w-full border rounded-sm h-10">
+                    <div class="">
+                    <label for="">danh mục hiện tại :${data.map((p) => (`  ${p.name} :(${p._id})</label>`)).join(" ,")}
+                    <input id="category"  type="text" placeholder="danh mục" value="" class="w-full border rounded-sm h-10">
+                        
                     </div>
-                    </div>
-                    
                     <div>
                     <label for="">Mô tả dài</label>
                     <textarea id="description" class="w-full border" style="
@@ -72,18 +78,18 @@ const AddProductPage = {
         const inputFile = document.querySelector('#input-file')
         const previewImage = document.querySelector('#preview-image')
         const loi = document.querySelector("#loi")
+
         addProductBtn?.addEventListener('click', async (e) => {
             const name = document.querySelector('#name')?.value
             const originalPrice = document.querySelector('#originalPrice')?.value
             const saleOffPrice = document.querySelector("#saleOffPrice")?.value
+            const category = document.querySelector("#category")?.value
             const description = document.querySelector("#description")?.value
-            const categoryProductId = document.querySelector("#categoryProductId")?.value
             const shortDescription = document.querySelector("#shortDescription")?.value
 
             const imageUrl = previewImage?.src
-            const product = new Product(name, originalPrice, imageUrl, saleOffPrice, categoryProductId, description, shortDescription)
-
-            if (name !== "" && originalPrice !== "" && description !== "" && categoryProductId !== "" && saleOffPrice !== "") {
+            const product = new Product(name, originalPrice, imageUrl, saleOffPrice, category, description, shortDescription)
+            if (name !== "" && originalPrice !== "" && description !== "" && category !== "" && saleOffPrice !== "") {
                 try {
                     const data = await createProduct(product)
                     alert('Thêm mới thành công')
@@ -110,9 +116,6 @@ const AddProductPage = {
                     console.log(err)
                 }
             }
-
-
-            // console.log('xxxxx')
         })
 
     }
