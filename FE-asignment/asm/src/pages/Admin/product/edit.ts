@@ -3,13 +3,16 @@ import header from '../../../compoment/header'
 import menu from '../../../compoment/menu'
 import { getProductsid } from '../../../api/product'
 import Product from "../../../model/product"
-
+import { getCategory } from "../../../api/category"
+import Category from '../../../model/category'
 const EditProductPage = {
     render: async (id) => {
         console.log(id)
         const res = await getProductsid(id)
         const data: Product[] = res.data
         console.log(res)
+        const res2 = await getCategory()
+        const data2: Category[] = res2.data
         return /*html*/`
         
             
@@ -58,13 +61,14 @@ const EditProductPage = {
                         <label for="">Giá khuyến mãi:</label>
                         <input id="saleOffPrice" type="text"  value="${data.saleOffPrice}" class="w-full border rounded-sm h-10">
                     </div>
-                    <div class="flex flex-col">
-                        <label for="">danh mục</label>
-                        <input id="categoryProductId"  type="text" placeholder="danh mục" value="${data.categoryProductId}" class="w-full border rounded-sm h-10">
+                    
+                    
+                    
+                    
                     </div>
-                    
-                    
-                    
+                    <div class="flex flex-col">
+                    <label for="">danh mục hiện tại :${data2.map((p) => (`  ${p.name} :(${p._id})`)).join(" ,")}</label>
+                        <input id="category"  type="text" placeholder="danh mục" value="${data.category}" class="w-full border rounded-sm h-10">
                     </div>
                     
                     <div>
@@ -98,7 +102,7 @@ const EditProductPage = {
                 originalPrice: document.querySelector("#originalPrice").value,
                 saleOffPrice: document.querySelector("#saleOffPrice").value,
                 description: document.querySelector("#description").value,
-                categoryProductId: document.querySelector("#categoryProductId").value,
+                category: document.querySelector("#category").value,
                 shortDescription: document.querySelector("#shortDescription").value,
 
             };
