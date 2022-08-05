@@ -24,8 +24,13 @@ userSchema.methods = {
         return this.password === this.encryPassword(password)
     },
     encryPassword: (password) => {
-        if (!password) return false;
-        return createHmac("sha256", "jqk").update(password).digest("hex")
+        if (!password) return;
+        try {
+            return createHmac("sha256", "jqk").update(password).digest("hex")
+        } catch (error) {
+            console.log(error);
+        }
+
     }
 }
 userSchema.pre('save', function(next) {
