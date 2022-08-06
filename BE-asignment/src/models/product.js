@@ -1,16 +1,19 @@
 import mongoose from "mongoose";
-const ProductSchema = mongoose.Schema ({
-    image_path: {
+const ProductSchema = mongoose.Schema({
+    image: {
         type: String,
     },
     name: {
         type: String,
     },
     saleOffPrice: {
-        type: Number,
+        type: String,
     },
     originalPrice: {
-        type: Number,
+        type: String,
+    },
+    description: {
+        type: String,
     },
     shortDescription: {
         type: String,
@@ -20,5 +23,5 @@ const ProductSchema = mongoose.Schema ({
         ref: 'Category'
     }
 });
- export default mongoose.model('Product',ProductSchema);
+export default mongoose.model('Product', ProductSchema);
 

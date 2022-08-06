@@ -4,19 +4,23 @@ import footer from "../../compument/footer"
 import header from "../../compument/header"
 import menu from "../../compument/menu"
 import banner from "../../compument/banner"
-
+import Category from "../../model/category"
+import { getCategoryid } from "../../api/category"
 const homePage = {
-	render: async () => {
+    render: async () => {
         const res = await getProducts()
         const data: Product[] = res.data
         console.log(data.map((p) => (p.id)));
-		return /*html*/`
+        const res3 = await getCategoryid("62ec840af4785a23d87da017")
+        const data3: Category[] = res3.data
+        console.log(data3.products.map((p) => (`${p.name}`)).join(""))
+        return /*html*/`
             ${header.render()}
         <div class="flex mt-4 divide-x">
             ${menu.render()}
             ${banner.render()}
         </div>    
-            <h1 class="ml-20 mt-10 text-lg ">ĐIỆN THOẠI HOT NHẤT</h1> 
+            <h1 class="ml-20 mt-10 text-lg ">Sản Phẩm CHUNG</h1> 
         <div class="product ">
             
             <div class=" grid grid-cols-5 gap-6 m-10">
@@ -37,45 +41,15 @@ const homePage = {
             </div>
             <div class="grid grid-cols-9 gap-4 mx-20">
                 <div class="bg-[#FFB8B8] rounded-lg">
-                <p class="text-white">Phụ kiện Apple</p>
+                <p class="text-white">phụ kiện</p>
                 <img src="./public/image/phukien.jpg" alt="">
             </div>
+            ${data3.products.map((p) => (`
             <div class="bg-[#FF94EB] rounded-lg">
-                <p class="text-white">Phụ kiện Apple</p>
-                <img src="./public/image/phukien.jpg" alt="">
-                </div>
-            <div class="bg-[#96FDB5] rounded-lg">
-                <p class="text-white">Phụ kiện Apple</p>
-                <img src="./public/image/phukien.jpg" alt="">
+                <p class="text-white">${p.name}</p>
+                <img src="${p.image}" alt="">
             </div>
-            <div class="bg-[#FF94EB] rounded-lg">
-                <p class="text-white">Phụ kiện Apple</p>
-                <img src="./public/image/phukien.jpg" alt="">
-            </div>
-            <div class="bg-[#4D91FF] rounded-lg">
-                <p class="text-white">Phụ kiện Apple</p>
-                <img src="./public/image/phukien.jpg" alt="">
-            </div>
-            <div class="bg-[#F5D63D] rounded-lg">
-                <p class="text-white">Phụ kiện Apple</p>
-                <img src="./public/image/phukien.jpg" alt="">
-            </div>
-            <div class="bg-[#FDA363] rounded-lg">
-                <p class="text-white">Phụ kiện Apple</p>
-                <img src="./public/image/phukien.jpg" alt="">
-            </div>
-            <div class="bg-[#D6D6D6] rounded-lg">
-                <p class="text-white">Phụ kiện Apple</p>
-                <img src="./public/image/phukien.jpg" alt="">
-            </div>
-            <div class="bg-[#F5D63D] rounded-lg">
-                <p class="text-white">Phụ kiện Apple</p>
-                <img src="./public/image/phukien.jpg" alt="">
-            </div>
-            <div class="bg-[#FDA363] rounded-lg">
-                <p class="text-white">Phụ kiện Apple</p>
-                <img src="./public/image/phukien.jpg" alt="">
-            </div>
+            `)).join("")}
         </div>
         </div>
   </div>
