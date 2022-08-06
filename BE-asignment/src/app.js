@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/asm-nodejs', () => {
     console.log('successfully');
 })
 
-const PORT = 3885
+const PORT = 3886
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
 })

@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-const ProductSchema = mongoose.Schema ({
+const ProductSchema = mongoose.Schema({
     name: {
         type: String,
     },
     originalPrice: {
-        type:String,
+        type: Number,
     },
     image_path: {
         type: String,
@@ -13,9 +13,6 @@ const ProductSchema = mongoose.Schema ({
         type: Number,
     },
     categoryProductId: {
-        type: String,
-    },
-    feature: {
         type: String,
     },
     description: {
@@ -29,5 +26,4 @@ const ProductSchema = mongoose.Schema ({
         ref: 'Category'
     }
 });
- export default mongoose.model('Product',ProductSchema);
-
+export default mongoose.model('Product', ProductSchema);
