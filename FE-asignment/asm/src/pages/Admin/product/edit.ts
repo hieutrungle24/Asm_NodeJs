@@ -1,6 +1,6 @@
 import { update } from '../../../api/product'
 import header from '../../../compoment/header'
-import menu from '../../../compoment/menu'
+import menu from '../../../compoment/admin/menu'
 import { getProductsid } from '../../../api/product'
 import Product from "../../../model/product"
 import { getCategory } from "../../../api/category"
@@ -19,7 +19,7 @@ const EditProductPage = {
             ${header.render()}
         <form id="formEdit">
            <div class="flex mt-4 divide-x">
-            <div class="w-[250px] flex-none">
+            <div class="menu w-[250px] flex-none">
                 ${menu.render()}
             </div>
             
@@ -55,11 +55,11 @@ const EditProductPage = {
                     <div class="grid grid-cols-2 gap-4 mt-4">
                     <div class="flex flex-col">
                         <label for="">Giá gốc:</label>
-                        <input id="originalPrice"  type="text" placeholder="Giá gốc" value="${data.originalPrice}" class="w-full border rounded-sm h-10">
+                        <input id="originalPrice"  type="number" placeholder="Giá gốc" value="${data.originalPrice}" class="w-full border rounded-sm h-10">
                     </div>
                     <div class="flex flex-col">
                         <label for="">Giá khuyến mãi:</label>
-                        <input id="saleOffPrice" type="text"  value="${data.saleOffPrice}" class="w-full border rounded-sm h-10">
+                        <input id="saleOffPrice" type="number"  value="${data.saleOffPrice}" class="w-full border rounded-sm h-10">
                     </div>
                     
                     

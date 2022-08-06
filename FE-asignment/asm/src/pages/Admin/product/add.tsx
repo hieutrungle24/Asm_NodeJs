@@ -1,7 +1,7 @@
 
 import { createProduct } from "../../../api/product"
 import header from "../../../compoment/header"
-import menu from "../../../compoment/menu"
+import menu from "../../../compoment/admin/menu"
 import Product from "../../../model/product"
 import { upload } from "../../../api/image"
 import { getCategory } from "../../../api/category"
@@ -48,11 +48,11 @@ const AddProductPage = {
                     <div class="grid grid-cols-2 gap-4 mt-4">
                     <div class="flex flex-col">
                         <label for="">Giá gốc:</label>
-                        <input id="originalPrice" type="text" placeholder="Giá gốc" class="w-full border rounded-sm h-10">
+                        <input id="originalPrice" type="number" placeholder="Giá gốc" class="w-full border rounded-sm h-10">
                     </div>
                     <div class="flex flex-col">
                         <label for="">Giá khuyến mãi:</label>
-                        <input id="saleOffPrice" type="text" placeholder="Giá khuyến mãi" class="w-full border rounded-sm h-10">
+                        <input id="saleOffPrice" type="number" placeholder="Giá khuyến mãi" class="w-full border rounded-sm h-10">
                     </div>    
                     </div>
                     <div class="">

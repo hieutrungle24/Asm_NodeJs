@@ -1,6 +1,6 @@
 import { getProducts, remove } from "../../api/product"
-import header from "../../compoment/header";
-import menu from "../../compoment/menu";
+import header from "../../compoment/admin/header";
+import menu from "../../compoment/admin/menu";
 import Product from "../../model/product"
 
 const AdminPage = {
