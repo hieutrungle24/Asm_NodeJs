@@ -8,6 +8,7 @@ import homePage from './pages/homePage/home';
 import detailPage from './pages/detailPage/detail';
 import Signup from './pages/auth/signup';
 import Signin from './pages/auth/singin';
+import detailCategory from './pages/detailCategory/detailCategory';
 const router = new Navigo('/', { linksSelector: "a" });
 
 export type ComponentBase = {
@@ -46,6 +47,10 @@ router.on({
   },
   "/singin": () => {
     print(Signin)
+  },
+  "/homeCategory/:id": (value) => {
+    const id = value.data.id
+    print(detailCategory, id)
   }
 })
 router.resolve()

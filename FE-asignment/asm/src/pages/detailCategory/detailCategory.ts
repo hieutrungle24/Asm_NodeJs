@@ -6,12 +6,14 @@ import banner from "../../compoment/banner"
 import Category from "../../model/category"
 import { getCategoryid } from "../../api/category"
 import { getCategory } from "../../api/category"
-const homePage = {
-    render: async () => {
-        const res = await getProducts()
+const detailCategory = {
+    render: async (id) => {
+        const res = await getCategoryid(`62ec840af4785a23d87da017`)
         const data: Product[] = res.data
-        const res3 = await getCategoryid(`62ec840af4785a23d87da017`)
+
+        const res3 = await getCategoryid(`${id}`)
         const data3: Category[] = res3.data
+        console.log(data3)
         const res2 = await getCategory()
         const data2: Category[] = res2.data
         return /*html*/`
@@ -45,11 +47,11 @@ const homePage = {
     </div>
             ${banner.render()}
         </div>    
-        <h1 class="ml-20 mt-10 text-lg ">Sản Phẩm CHUNG</h1> 
+        <h1 class="ml-20 mt-10 text-lg ">${data3.category.name}</h1> 
         <div class="product ">
             
             <div class=" grid grid-cols-5 gap-6 m-10">
-            ${data.map((p, index) => /*html*/`
+            ${data3.products.map((p, index) => /*html*/`
                 <div>
                     <a href="/products/${p._id}"><img src="${p.image}"  class="mb-2" alt=""></a>
                     <a href="/products/${p._id}"><p class="mb-2">${p.name}</p></a>
@@ -67,9 +69,9 @@ const homePage = {
             <div class="grid grid-cols-9 gap-4 mx-20">
                 <div class="bg-[#FFB8B8] rounded-lg">
                 <p class="text-white">Phụ kiện Apple</p>
-                <img src="./public/image/phukien.jpg" alt="">
+                <img src="../../../public/image/phukien.jpg" alt="">
             </div>
-            ${data3.products.map((p) => (`
+            ${data.products.map((p) => (`
             <div class="bg-[#FF94EB] rounded-lg">
             <p class="text-white">${p.name}</p>
                 <img src="${p.image}" alt="">
@@ -85,4 +87,4 @@ const homePage = {
         `}
 }
 
-export default homePage
+export default detailCategory
