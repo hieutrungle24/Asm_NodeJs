@@ -29,7 +29,7 @@ export const add = async(req, res) => {
     try {
         const product = await new Product(req.body).save();
         res.json(product);
-        console.log("product",product);
+        console.log("product", product);
     } catch (error) {
         res.status(400).json({
             error: "Không thêm được sản phẩm",
@@ -43,7 +43,7 @@ export const remove = async(req, res) => {
         res.json(product);
     } catch (error) {
         res.status(400).json({
-            error: "Không thêm được sản phẩm",
+            error: "Không xóa được sản phẩm",
         })
     }
 }
@@ -56,7 +56,14 @@ export const update = async(req, res) => {
         res.json(product);
     } catch (error) {
         res.status(400).json({
-            error: "Không thêm được sản phẩm",
+            error: "Không cập nhật được sản phẩm",
         })
     }
+}
+
+export const search = async(req, res) => {
+    console.log(req.query);
+    const searchString = req.query.q ? req.query.q : ""
+    const result = await Product.find({ $text: { $search: searchString } }).exec()
+    res.json(result)
 }
