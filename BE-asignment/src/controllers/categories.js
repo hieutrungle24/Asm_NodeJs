@@ -35,3 +35,23 @@ export const read = async(req, res) => {
         })
     }
 }
+export const update = async(req, res) => {
+    try {
+        const updateCategory = await Category.findByIdAndUpdate(req.params.id, req.body)
+        res.json(updateCategory)
+    } catch (error) {
+        res.status(400).json({
+            message: "Khong cap nhat duoc"
+        })
+    }
+}
+export const remove = async(req, res) => {
+    try {
+        const removeCategory = await Category.findByIdAndDelete(req.params.id)
+        res.json(removeCategory)
+    } catch (error) {
+        res.status(400).json({
+            message: "Khong xoa duoc"
+        })
+    }
+}
