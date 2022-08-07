@@ -1,16 +1,15 @@
 import { update } from '../../../api/product'
-import header from '../../../compoment/header'
+import header from '../../../compoment/admin/header'
 import menu from '../../../compoment/admin/menu'
 import { getProductsid } from '../../../api/product'
 import Product from "../../../model/product"
-import { getCategory } from "../../../api/category"
+import { getCategory, getCategoryid } from "../../../api/category"
 import Category from '../../../model/category'
 const EditProductPage = {
     render: async (id) => {
         console.log(id)
         const res = await getProductsid(id)
         const data: Product[] = res.data
-        console.log(res)
         const res2 = await getCategory()
         const data2: Category[] = res2.data
         return /*html*/`
@@ -24,7 +23,7 @@ const EditProductPage = {
             </div>
             
             
-            <div class="grow" style="background-color: #F8F8F8">
+            <div class="grow px-4" style="background-color: #F8F8F8">
                 <h3>sửa sản phẩm</h3>
                 <div class="grid grid-cols-3 gap-8">
                 <div class="">
@@ -66,9 +65,16 @@ const EditProductPage = {
                     
                     
                     </div>
-                    <div class="flex flex-col">
-                    <label for="">danh mục hiện tại :${data2.map((p) => (`  ${p.name} :(${p._id})`)).join(" ,")}</label>
-                        <input id="category"  type="text" placeholder="danh mục" value="${data.category}" class="w-full border rounded-sm h-10">
+                    <div class="mt-3 mb-3">
+                    <label for="cars">Chọn Danh Mục:</label>
+                    <select id="category" >
+                    data.map((p) => (p._id)).join("")
+                    
+                    ${data2.map((p) => (`
+                    <option class="text-amber-700" value="${p._id}" selected>${p.name}</option>
+                    `)).join("")}
+                    </select>
+                        
                     </div>
                     
                     <div>
