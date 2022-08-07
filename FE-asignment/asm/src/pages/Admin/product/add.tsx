@@ -1,6 +1,6 @@
 
 import { createProduct } from "../../../api/product"
-import header from "../../../compoment/header"
+import header from "../../../compoment/admin/header"
 import menu from "../../../compoment/admin/menu"
 import Product from "../../../model/product"
 import { upload } from "../../../api/image"
@@ -18,7 +18,7 @@ const AddProductPage = {
             <div class="w-[250px] flex-none">
                 ${menu.render()}
             </div>
-            <div class="grow">
+            <div class="grow px-4">
                 <h3>Thêm mới sản phẩm</h3>
                 <div class="grid grid-cols-3 gap-8">
                 <div class="">
@@ -53,20 +53,27 @@ const AddProductPage = {
                     <div class="flex flex-col">
                         <label for="">Giá khuyến mãi:</label>
                         <input id="saleOffPrice" type="number" placeholder="Giá khuyến mãi" class="w-full border rounded-sm h-10">
-                    </div>    
+                    </div>  
+
                     </div>
-                    <div class="">
-                    <label for="">danh mục hiện tại :${data.map((p) => (`  ${p.name} :(${p._id})</label>`)).join(" ,")}
-                    <input id="category"  type="text" placeholder="danh mục" value="" class="w-full border rounded-sm h-10">
+                    <div class="mt-3 mb-3">
+                    <label for="cars">Chọn Danh Mục:</label>
+                    <select id="category" >
+                    data.map((p) => (p._id)).join("")
+                    ${data.map((p) => (`
+                    <option class="text-amber-700" value="${p._id}">${p.name}</option>
+                    `)).join("")}
+                    </select>
                         
                     </div>
+
                     <div>
                     <label for="">Mô tả dài</label>
                     <textarea id="description" class="w-full border" style="
                      height: 100px;"></textarea>
                     </div>
                 
-                   <button class="border rounded-md" id="add-product-btn">Thêm mới sản phẩm</button>
+                   <button class="border rounded-md bg-blue-300 mt-5" style="color: white;">Thêm mới sản phẩm</button>
                 </div>
                 </div>
             </div>

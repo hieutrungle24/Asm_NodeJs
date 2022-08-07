@@ -1,7 +1,7 @@
-import { getProducts, remove } from "../../api/product"
-import header from "../../compoment/admin/header";
-import menu from "../../compoment/admin/menu";
-import Product from "../../model/product"
+import { getProducts, remove } from "../../../api/product";
+import header from "../../../compoment/admin/header";
+import menu from "../../../compoment/admin/menu";
+import Product from "../../../model/product"
 
 const AdminPage = {
     render: async () => {
@@ -29,7 +29,7 @@ const AdminPage = {
                 <table class="table-auto border mt-8" style="width:100%;">
                     <thead>
                     <tr>
-                        <th class="w-[5%] border">#</th>
+                        <th class="w-[5%] border">#Stt</th>
                         <th class="w-[15%] border">Tên sản phẩm</th>
                         <th class="w-[10%] border">Gía</th>
                         <th class="w-[30%] border">Mô tả</th>
