@@ -82,7 +82,10 @@ const homePage = {
   <br>
   <br>
   ${footer.render()}
-        `}
+        `},
+    afterRender: () => {
+        header.afterRender()
+    }
 
 }
 

@@ -1,7 +1,12 @@
 import instance from "./instance";
 import Product from "../model/product";
 import { isAutheticate } from "../utils/localStorage";
-const userid = JSON.parse(localStorage.getItem('user')).id
+if (JSON.parse(localStorage.getItem('user'))) {
+    const userid = JSON.parse(localStorage.getItem('user')).id
+}
+else {
+
+}
 export const getProducts = () => {
     const url = "/products"
     return instance.get(url)
