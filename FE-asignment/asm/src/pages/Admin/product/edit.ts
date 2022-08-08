@@ -71,7 +71,7 @@ const EditProductPage = {
                     data.map((p) => (p._id)).join("")
                     
                     ${data2.map((p) => (`
-                    <option class="text-amber-700" value="${p._id}" selected>${p.name}</option>
+                    <option class="text-amber-700" value="${p._id}" >${p.name}</option>
                     `)).join("")}
                     </select>
                         
@@ -115,7 +115,7 @@ const EditProductPage = {
             // call api
             update(post);
 
-            window.location.href = '/admin';
+
 
         });
 

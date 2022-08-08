@@ -19,7 +19,7 @@ const Signin = {
                     <input id="password" class="block border w-full rounded-sm border-gray-200 mt-2 p-1 outline-none" type="password" >
                     <div class="text-red-500 text-sm error"></div>
                 </div>
-                <button id="btn-submit" class="block mt-2 py-4 text-center bg-red-600 text-white w-full">Đăng kí</button>
+                <button id="btn-submit" class="block mt-2 py-4 text-center bg-red-600 text-white w-full">Đăng nhập</button>
             </div>
             </form>
             <div class="grow p-[55px] bg-gray-50 flex justify-center items-center">

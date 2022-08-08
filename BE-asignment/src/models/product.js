@@ -6,7 +6,7 @@ const ProductSchema = mongoose.Schema({
     originalPrice: {
         type: Number,
     },
-    image_path: {
+    image: {
         type: String,
     },
     saleOffPrice: {
