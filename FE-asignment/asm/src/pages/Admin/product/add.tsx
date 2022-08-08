@@ -73,7 +73,7 @@ const AddProductPage = {
                      height: 100px;"></textarea>
                     </div>
                 
-                   <button class="border rounded-md bg-blue-300 mt-5" style="color: white;">Thêm mới sản phẩm</button>
+                    <button class="border rounded-md bg-blue-300 mt-5" style="color: white;" id="add-product-btn">Thêm mới sản phẩm</button>
                 </div>
                 </div>
             </div>

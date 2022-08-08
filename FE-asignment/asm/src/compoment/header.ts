@@ -1,11 +1,19 @@
+import { authenticate } from "../utils/localStorage"
 const header = {
-    render: () => {
+    render: (() => {
+
+        if (localStorage.getItem('user')) {
+            var b = `Xin Chào: ${JSON.parse(localStorage.getItem('user')).name}`
+        }
+        else {
+            var b = ""
+        }
         return (
             /*html*/`
             <div class="flex bg-blue-300 justify-between">
                 <a href="/"><img class="w-[64px] p-2" src="../../../public/image/logo.png"/></a>
                 <div class="ml-auto flex items-center">
-
+                <div class="mr-12" id="b">${b}  </div>
                 <div class="flex items-center justify-center">
                 <a href="/singin"><button  class="flex items-center justify-center px-4 border-l">Đăng Nhập</button></a>
                 <a href="/singup"><button class="flex items-center justify-center px-4 border-l">Đăng Ký</button></a>
@@ -39,6 +47,8 @@ const header = {
             `
         )
     }
+    )
 }
+
 
 export default header

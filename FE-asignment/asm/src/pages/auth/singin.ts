@@ -1,4 +1,5 @@
 import { signin } from "../../api/users";
+import { authenticate } from "../../utils/localStorage";
 const Signin = {
     render: async () => {
         return /*html*/`
@@ -40,13 +41,13 @@ const Signin = {
                 const result = await signin(user);
                 if (result) {
                     document.querySelector('#name').innerHTML = result.data.user.email;
-                    localStorage.setItem('user', JSON.stringify(result.data.user));
-                    alert("đăng nhập thành công chọn ok để chuyển trang sau 2 giây")
+                    console.log(result)
+                    authenticate(result.data.user, () =>
+                        alert("đăng nhập thành công chọn ok để chuyển trang sau 2 giây"))
+                    setTimeout(() => {
+                        window.location.href = "/"
+                    }, 2000)
                 }
-                setTimeout(() => {
-                    window.location.href = "/"
-                }, 2000)
-                // window.location.href = "/"
             } catch (error) {
                 document.querySelector('.alert').innerHTML = `lỗi ${error.response.data}`;
                 console.log(error.response.data)

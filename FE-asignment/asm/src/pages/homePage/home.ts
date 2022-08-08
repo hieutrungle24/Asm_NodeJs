@@ -83,6 +83,8 @@ const homePage = {
   <br>
   ${footer.render()}
         `}
+
 }
+
 
 export default homePage
