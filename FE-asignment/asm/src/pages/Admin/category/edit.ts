@@ -27,7 +27,7 @@ const EditCategoryPage = {
                     <label for="">Tên Danh Mục:</label>
                     <input id="name" type="text" value="${data.name}" placeholder="Tên sản phẩm" class="w-11/12 border rounded-sm h-10 "><span id="loi"></span><br>
                     </div>
-                   <button class="border rounded-md bg-blue-300 mt-5" id="add-category-btn"style="color: white;">Thêm mới sản phẩm</button>
+                   <button class="border rounded-md bg-blue-300 mt-5" id="add-category-btn"style="color: white;">sửa danh mục</button>
                 </div>
                 </div>
             </div>

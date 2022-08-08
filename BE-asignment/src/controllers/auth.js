@@ -1,7 +1,7 @@
 import User from "../models/user";
 import jwt from 'jsonwebtoken'
 
-export const signup = async(req, res) => {
+export const signup = async (req, res) => {
     try {
         const existEmail = await User.findOne({ email: req.body.email }).exec();
         if (existEmail) {
@@ -25,7 +25,7 @@ export const signup = async(req, res) => {
         })
     }
 }
-export const signin = async(req, res) => {
+export const signin = async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email }).exec()
         if (!user) {
@@ -44,7 +44,8 @@ export const signin = async(req, res) => {
             user: {
                 id: user._id,
                 email: user.email,
-                name: user.name
+                name: user.name,
+                role: user.role
             }
         })
     } catch (error) {

@@ -1,4 +1,5 @@
 import { signin } from "../../api/users";
+import { authenticate } from "../../utils/localStorage";
 const Signin = {
     render: async () => {
         return /*html*/`
@@ -18,7 +19,7 @@ const Signin = {
                     <input id="password" class="block border w-full rounded-sm border-gray-200 mt-2 p-1 outline-none" type="password" >
                     <div class="text-red-500 text-sm error"></div>
                 </div>
-                <button id="btn-submit" class="block mt-2 py-4 text-center bg-red-600 text-white w-full">Đăng kí</button>
+                <button id="btn-submit" class="block mt-2 py-4 text-center bg-red-600 text-white w-full">Đăng nhập</button>
             </div>
             </form>
             <div class="grow p-[55px] bg-gray-50 flex justify-center items-center">
@@ -40,13 +41,13 @@ const Signin = {
                 const result = await signin(user);
                 if (result) {
                     document.querySelector('#name').innerHTML = result.data.user.email;
-                    localStorage.setItem('user', JSON.stringify(result.data.user));
-                    alert("đăng nhập thành công chọn ok để chuyển trang sau 2 giây")
+                    console.log(result)
+                    authenticate(result.data.user, () =>
+                        alert("đăng nhập thành công chọn ok để chuyển trang sau 2 giây"))
+                    setTimeout(() => {
+                        window.location.href = "/"
+                    }, 2000)
                 }
-                setTimeout(() => {
-                    window.location.href = "/"
-                }, 2000)
-                // window.location.href = "/"
             } catch (error) {
                 document.querySelector('.alert').innerHTML = `lỗi ${error.response.data}`;
                 console.log(error.response.data)

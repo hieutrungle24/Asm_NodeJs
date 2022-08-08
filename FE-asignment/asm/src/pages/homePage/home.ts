@@ -82,7 +82,12 @@ const homePage = {
   <br>
   <br>
   ${footer.render()}
-        `}
+        `},
+    afterRender: () => {
+        header.afterRender()
+    }
+
 }
+
 
 export default homePage

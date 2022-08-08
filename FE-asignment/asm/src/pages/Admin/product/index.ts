@@ -32,8 +32,8 @@ const AdminPage = {
                         <th class="w-[5%] border">#Stt</th>
                         <th class="w-[15%] border">Tên sản phẩm</th>
                         <th class="w-[10%] border">Gía</th>
+                        <th class="w-[15%] border">giá đã giảm</th>
                         <th class="w-[30%] border">Mô tả</th>
-                        <th class="w-[15%] border">danh mục</th>
                         <th class="w-[10%] border text-center">xóa</th>
                         <th class="w-[10%] border">Edit</th>
                     </tr>
@@ -44,10 +44,9 @@ const AdminPage = {
                             <td class="border text-center">${index + 1}</td>
                             <td class="border">${p.name}</td>
                             <td class="border">${p.originalPrice}</td>
-                            
+                            <td class="border">${p.saleOffPrice}</td>
                             <td class="border">${p.description}</td>
-                            <td>aaaa<td>
-                            <button class="btn btn-danger btn-remove" style="margin-left: 30%;background-color: red;border-radius: 10px " data-id=${p._id
+                            <td><button class="btn btn-danger btn-remove" style="margin-left: 30%;background-color: red;border-radius: 10px " data-id=${p._id
             }>Remove</button></td>
                             <td class="border">
                                 <a href="/admin/products/edit/${p._id}">
